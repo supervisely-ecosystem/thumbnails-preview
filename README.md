@@ -41,7 +41,8 @@ The app create and visualize images gallery from dataset or project. App can be 
 
 1. Define number of columns on page
 2. Define number of images on page
-3. Press “Preview Images” button to preview gallery
+3. Press `Preview Images` button to preview gallery
+4. Stop application manually
 
 <div align="center" markdown>
 <img src="https://i.imgur.com/crQ2uT2.png"/>
