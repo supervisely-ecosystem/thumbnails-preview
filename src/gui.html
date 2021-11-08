@@ -1,0 +1,101 @@
+<div>
+<sly-card
+
+    title="Input Data"
+    :options="{collapsable: true}"
+    :collapsed.sync="state.collapsed1"
+ref="step1">
+
+    <div class="fflex">
+        <sly-field title="" description="Project">
+            <a slot="title" target="_blank"
+               :href="`/projects/${data.projectId}/datasets`">{{data.projectName}}</a>
+            <sly-icon slot="icon" :options="{ imageUrl: `${data.projectPreviewUrl}` }"/>
+        </sly-field>
+        <sly-field style="margin-left: 15px" v-if="data.datasetId != null" title="" description="Dataset">
+            <a slot="title" target="_blank"
+               :href="`/projects/${data.projectId}/datasets`">{{data.datasetName}}</a>
+            <sly-icon slot="icon" :options="{ imageUrl: `${data.datasetPreviewUrl}` }"/>
+        </sly-field>
+    </div>
+
+    <div class="fflex">
+
+        <p>
+            <b>Total images: {{state.totalImages}}</b>
+        </p>
+
+        <div>
+            <p v-if="data.datasetId != null" style="margin-left: 30px" v-if="data.datasetId != null">
+                <b>Total dataset images: {{state.dsImages}}</b>
+            </p>
+        </div>
+
+    </div>
+
+</sly-card>
+
+    <br>
+    </br>
+
+<sly-card title="Grid gallery">
+
+    <div class="fflex mb15">
+    <sly-field title="Number of images on page">
+        <el-input-number v-model="state.rows" :min="1" :max="300"></el-input-number>
+    </sly-field>
+    <sly-field title="Number of columns on page" style="margin-left: 10px">
+        <el-input-number v-model="state.cols" :min="1" :max="10"></el-input-number>
+    </sly-field>
+    <el-button type="primary" class="regular" style="margin-left: 15px"
+               @click="command('init_gallery');" ref="checkpoint">Get gallery
+    </el-button>
+    </div>
+
+    <div>
+        <hr>
+        <sly-field title="" class="mt10" >
+            <div class="fflex mb15" style="justify-content: center;">
+                <el-pagination
+                  v-if="state.alreadyUpload"
+                  @current-change="command('update_page')"
+                  :current-page.sync="state.input"
+                  layout="prev, pager, next, jumper"
+                  :page-size="state.rows"
+                  :total="state.maxImages">
+                </el-pagination>
+            </div>
+
+            <sly-grid-gallery
+                    v-if="data.perClass"
+                    :content="data.perClass.content"
+                    :options="data.perClass.options">
+                <template v-slot:card-footer="{ annotation }">
+                <div class="mt5" style="text-align: center">
+                   <el-tag type="primary">{{annotation.title}}</el-tag>
+
+                    <div v-for="v,k in annotation.info" style="word-break: break-all;">
+                        <b style="color: #777777;">{{k}}</b>: {{v}}
+                    </div>
+                </div>
+                </template>
+            </sly-grid-gallery>
+
+            <br>
+            </br>
+
+            <div class="fflex mb15" style="justify-content: center;">
+            <el-pagination
+                  v-if="state.alreadyUpload"
+                  @current-change="command('update_page'); $nextTick(() => { $refs['checkpoint'].$el.scrollIntoView({behavior: 'smooth', block: 'start'}); })"
+                  :current-page.sync="state.input"
+                  layout="prev, pager, next, jumper"
+                  :page-size="state.rows"
+                  :total="state.maxImages">
+            </el-pagination></div>
+
+        </sly-field>
+    </div>
+</sly-card>
+
+</div>
