@@ -1,6 +1,5 @@
 import supervisely_lib as sly
 import globals as g
-#from create_gallery import Gallery
 from supervisely_lib.app.widgets.grid_gallery import Gallery
 
 
