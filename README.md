@@ -28,7 +28,7 @@ The app create and visualize images gallery from dataset or project. User can de
 
 1. Add [Thumbnails preview](https://ecosystem.supervise.ly/apps/thumbnails-preview) to your team from Ecosystem.
 
-<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/crop-objects-on-image" src="https://i.imgur.com/mu8ouve.png" width="300px" style='padding-bottom: 20px'/>  
+<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/crop-objects-on-image" src="https://i.imgur.com/sZKsyQi.png" width="300px" style='padding-bottom: 20px'/>  
 
 2. Run app from the context menu of **Images Dataset** or **Images Project**.
 
