@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/jjtOwR3.png"/>
+<img src="https://i.imgur.com/CKrHFs4.png"/>
 
 
 # Thumbnails preview
@@ -7,7 +7,8 @@
 <p align="center">
   <a href="#Overview">Overview</a> •
   <a href="#How-To-Run">How To Run</a> •
-  <a href="#How-To-Use">How To Use</a> 
+  <a href="#How-To-Use">How To Use</a> •
+  <a href="#Demo">Demo</a> 
 </p>
 
 
@@ -22,7 +23,7 @@
 
 ## Overview
 
-The app create and visualize images gallery from dataset or project. User can define some settings - number or images on page and number of columns on page. 
+The app create and visualize images gallery from dataset or project. App can be used as a template for specific apps for quality assurance.
 
 # How To Run 
 
