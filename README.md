@@ -28,7 +28,7 @@ The app create and visualize images gallery from dataset or project. User can de
 
 1. Add [Thumbnails preview](https://ecosystem.supervise.ly/apps/thumbnails-preview) to your team from Ecosystem.
 
-<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/crop-objects-on-image" src="https://i.imgur.com/xA81Iek.png" width="450px" style='padding-bottom: 20px'/>  
+<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/crop-objects-on-image" src="https://i.imgur.com/mu8ouve.png" width="350px" style='padding-bottom: 20px'/>  
 
 2. Run app from the context menu of **Images Dataset** or **Images Project**.
 
@@ -38,10 +38,15 @@ The app create and visualize images gallery from dataset or project. User can de
 
 # How To Use
 
-1. Define number of images on page
-2. Define number of columns on page
-3. Press “Get gallery” button to preview gallery
+1. Define number of columns on page
+2. Define number of images on page
+3. Press “Preview Images” button to preview gallery
 
 <div align="center" markdown>
-<img src="https://i.imgur.com/A3kPFC1.jpg"/>
+<img src="https://i.imgur.com/crQ2uT2.png"/>
 </div>
+
+
+# Demo
+
+<a data-key="sly-embeded-video-link" href="https://youtu.be/VeANefh_Gfg" data-video-code="VeANefh_Gfg"> <img src="https://i.imgur.com/ztTRL06.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="800"> </a>  
