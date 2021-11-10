@@ -56,7 +56,9 @@ ref="step1">
                     :options="data.perClass.options">
                 <template v-slot:card-footer="{ annotation }">
                 <div class="mt5" style="text-align: center">
-                   <el-tag type="primary">{{annotation.title}}</el-tag>
+                    <a :href="`${annotation.labelingUrl}`">
+                            <el-tag type="primary">{{annotation.title}} <i class="zmdi zmdi-open-in-new"></i></el-tag>
+                    </a>
 
                     <div v-for="v,k in annotation.info" style="word-break: break-all;">
                         <b style="color: #777777;">{{k}}</b>: {{v}}

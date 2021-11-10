@@ -36,9 +36,13 @@ if len(meta.obj_classes) == 0:
     raise ValueError("Where is no objects in input project(dataset)")
 
 all_images = []
+images_labeling_urls = []
 for dataset in datasets:
     images = api.image.get_list(dataset.id, sort="name")
     all_images.extend(images)
+    for image in images:
+        image_labeling_url = f"{api.server_address}/app/images/{TEAM_ID}/{WORKSPACE_ID}/{PROJECT_ID}/{dataset.id}#image-{image.id}"
+        images_labeling_urls.append(image_labeling_url)
 
 image_ids = [image_info.id for image_info in all_images]
 images_urls = [image_info.full_storage_url for image_info in all_images]

@@ -1,6 +1,7 @@
 import supervisely_lib as sly
 import globals as g
-from supervisely_lib.app.widgets.grid_gallery import Gallery
+from grid_gallery import Gallery
+#from supervisely_lib.app.widgets.grid_gallery import Gallery
 
 
 def get_ann_by_id(id):
@@ -44,13 +45,17 @@ def update_gallery_by_page(current_page, state):
     g.curr_images_ids = g.image_ids[images_per_page * (current_page - 1):images_per_page * current_page]
     g.curr_anns = [get_ann_by_id(image_id) for image_id in g.curr_images_ids]
 
-    for idx, (image_name, ann, image_url) in enumerate(zip(curr_images_names, g.curr_anns, curr_images_urls)):
+    curr_labeling_urls = g.images_labeling_urls[images_per_page * (current_page - 1):images_per_page * current_page]
+
+    for idx, (image_name, ann, image_url, labeling_url) in enumerate(
+            zip(curr_images_names, g.curr_anns, curr_images_urls, curr_labeling_urls)):
         if idx == images_per_page:
             break
 
-        info_dict = get_info_dict(ann)
+        custom_info = get_info_dict(ann)
 
-        g.full_gallery.add_item(title=image_name, ann=ann, image_url=image_url, info_dict=info_dict)
+        g.full_gallery.add_item(title=image_name, ann=ann, image_url=image_url, custom_info=custom_info,
+                                labeling_url=labeling_url)
 
     g.full_gallery.update()
 
