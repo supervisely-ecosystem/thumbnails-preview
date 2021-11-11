@@ -1,5 +1,6 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/jjtOwR3.png"/>
+<img src="https://i.imgur.com/CKrHFs4.png"/>
+
 
 
 # Thumbnails preview
@@ -43,5 +44,6 @@ The app create and visualize images gallery from dataset or project. User can de
 3. Press “Get gallery” button to preview gallery
 
 <div align="center" markdown>
-<img src="https://i.imgur.com/A3kPFC1.jpg"/>
+<img src="https://i.imgur.com/crQ2uT2.png"/>
 </div>
+
