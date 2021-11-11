@@ -4,7 +4,7 @@
   "categories": [
     "Images"
   ],
-  "description": "Review images via grid gallery",
+  "description": "Preview images as a grid gallery",
   "docker_image": "supervisely/base-py-sdk:6.1.104",
   "main_script": "src/main.py",
   "gui_template": "src/gui.html",
