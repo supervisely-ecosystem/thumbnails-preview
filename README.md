@@ -51,4 +51,4 @@ The app create and visualize images gallery from dataset or project. App can be 
 
 # Demo
 
-<a data-key="sly-embeded-video-link" href="https://youtu.be/VeANefh_Gfg" data-video-code="VeANefh_Gfg"> <img src="https://i.imgur.com/ztTRL06.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="800"> </a>  
+<a data-key="sly-embeded-video-link" href="https://youtu.be/GncYtR7XQPs" data-video-code="GncYtR7XQPs"> <img src="https://i.imgur.com/zzkzcKA.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="800"> </a>  
