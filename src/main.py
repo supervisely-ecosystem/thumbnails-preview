@@ -45,17 +45,17 @@ def update_gallery_by_page(current_page, state):
     g.curr_images_ids = g.image_ids[images_per_page * (current_page - 1):images_per_page * current_page]
     g.curr_anns = [get_ann_by_id(image_id) for image_id in g.curr_images_ids]
 
-    curr_labeling_urls = g.images_labeling_urls[images_per_page * (current_page - 1):images_per_page * current_page]
+    curr_title_urls = g.images_labeling_urls[images_per_page * (current_page - 1):images_per_page * current_page]
 
-    for idx, (image_name, ann, image_url, labeling_url) in enumerate(
-            zip(curr_images_names, g.curr_anns, curr_images_urls, curr_labeling_urls)):
+    for idx, (image_name, ann, image_url, title_url) in enumerate(
+            zip(curr_images_names, g.curr_anns, curr_images_urls, curr_title_urls)):
         if idx == images_per_page:
             break
 
         custom_info = get_info_dict(ann)
 
         g.full_gallery.add_item(title=image_name, ann=ann, image_url=image_url, custom_info=custom_info,
-                                labeling_url=labeling_url)
+                                title_url=title_url)
 
     g.full_gallery.update()
 
