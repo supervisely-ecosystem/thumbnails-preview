@@ -1,7 +1,6 @@
 import supervisely_lib as sly
 import globals as g
-from grid_gallery import Gallery
-#from supervisely_lib.app.widgets.grid_gallery import Gallery
+from supervisely_lib.app.widgets.grid_gallery import Gallery
 
 
 def get_ann_by_id(id):
@@ -120,6 +119,7 @@ def main():
     data["projectName"] = g.project_info.name
     data["projectPreviewUrl"] = g.api.image.preview_url(g.project_info.reference_image_url, 100, 100)
     if g.DATASET_ID is not None:
+        data["datasetPreviewUrl"] = g.api.image.preview_url(g.dataset_preview_image.full_storage_url, 100, 100)
         data["datasetId"] = g.dataset_info.id
         data["datasetName"] = g.dataset_info.name
 

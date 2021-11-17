@@ -22,6 +22,7 @@ datasets = None
 if DATASET_ID is not None:
     dataset_info = api.dataset.get_info_by_id(DATASET_ID)
     datasets = [dataset_info]
+    dataset_preview_image = api.image.get_list(dataset_info.id, sort="name")[0]
 
 project_info = api.project.get_info_by_id(PROJECT_ID)
 stats = api.project.get_stats(PROJECT_ID)
