@@ -22,7 +22,7 @@ ref="step1">
 
     <br>
 
-<sly-card title="Grid gallery">
+<sly-card title="Grid gallery" v-loading="state.loading">
 
     <div class="fflex mb15">
     <sly-field title="Columns per page">
@@ -37,7 +37,7 @@ ref="step1">
     </div>
 
     <div style="border-top: 1px solid #e3e6ec;">
-        <sly-field title="" class="mt10" >
+        <sly-field title="" class="mt10">
             <div class="fflex mb15" style="justify-content: center;">
                 <el-pagination
                   v-if="state.alreadyUpload"

@@ -13,19 +13,25 @@ WORKSPACE_ID = int(os.environ['context.workspaceId'])
 PROJECT_ID = int(os.environ['modal.state.slyProjectId'])
 DATASET_ID = os.environ.get('modal.state.slyDatasetId', None)
 
+stats = api.project.get_stats(PROJECT_ID)
+
 if DATASET_ID is not None:
     DATASET_ID = int(DATASET_ID)
 
 project = None
 datasets = None
 
+total_images_in_dataset = None
 if DATASET_ID is not None:
     dataset_info = api.dataset.get_info_by_id(DATASET_ID)
     datasets = [dataset_info]
     dataset_preview_image = api.image.get_list(dataset_info.id, sort="name")[0]
 
+    for item in stats["datasets"]["items"]:
+        if item["id"] == DATASET_ID:
+            total_images_in_dataset = item["imagesCount"]
+
 project_info = api.project.get_info_by_id(PROJECT_ID)
-stats = api.project.get_stats(PROJECT_ID)
 total_images_in_project = stats['images']['total']['imagesInDataset']
 
 if datasets is None:
