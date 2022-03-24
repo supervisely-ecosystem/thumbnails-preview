@@ -21,7 +21,7 @@ def init(data, state):
     state["galleryMaxPage"] = None
     state["input"] = None
     state["maxImages"] = None
-    state["totalImages"] = None
+    state["totalImages"] = g.total_images_in_project
     state["dsImages"] = None
     state["preview_info"] = g.preview_info
     state["loading"] = True

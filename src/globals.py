@@ -32,15 +32,13 @@ if DATASET_ID is not None:
             total_images_in_dataset = item["imagesCount"]
 
 project_info = api.project.get_info_by_id(PROJECT_ID)
-total_images_in_project = stats['images']['total']['imagesInDataset']
+total_images_in_project = stats["datasets"]["total"]["imagesCount"]
 
 if datasets is None:
     datasets = api.dataset.get_list(PROJECT_ID)
 
 meta_json = api.project.get_meta(project_info.id)
 meta = sly.ProjectMeta.from_json(meta_json)
-if len(meta.obj_classes) == 0:
-    raise ValueError("Where is no objects in input project(dataset)")
 
 all_images = []
 images_labeling_urls = []
