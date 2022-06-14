@@ -1,4 +1,4 @@
-import supervisely_lib as sly
+import supervisely as sly
 import globals as g
 import init_ui
 import functions as f

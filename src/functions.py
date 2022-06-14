@@ -1,6 +1,6 @@
-import supervisely_lib as sly
+import supervisely as sly
 import globals as g
-from supervisely_lib.app.widgets.grid_gallery import Gallery
+from supervisely.app.v1.widgets.grid_gallery import Gallery
 
 
 def get_ann_by_id(id, current_page):
