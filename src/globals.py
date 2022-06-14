@@ -1,9 +1,10 @@
 import os
-import supervisely_lib as sly
+import supervisely as sly
 from diskcache import Cache
-from supervisely_lib.io.fs import mkdir
+from supervisely.io.fs import mkdir
+from supervisely.app.v1.app_service import AppService
 
-my_app = sly.AppService()
+my_app: AppService = AppService()
 
 api: sly.Api = my_app.public_api
 task_id = my_app.task_id
@@ -46,11 +47,11 @@ for dataset in datasets:
     images = api.image.get_list(dataset.id, sort="name")
     all_images.extend(images)
     for image in images:
-        image_labeling_url = f"{api.server_address}/app/images/{TEAM_ID}/{WORKSPACE_ID}/{PROJECT_ID}/{dataset.id}#image-{image.id}"
+        image_labeling_url = f"/app/images/{TEAM_ID}/{WORKSPACE_ID}/{PROJECT_ID}/{dataset.id}#image-{image.id}"
         images_labeling_urls.append(image_labeling_url)
 
 image_ids = [image_info.id for image_info in all_images]
-images_urls = [image_info.full_storage_url for image_info in all_images]
+images_urls = [image_info.path_original for image_info in all_images]
 images_names = [image_info.name for image_info in all_images]
 
 work_dir = os.path.join(my_app.cache_dir, "work_dir")
