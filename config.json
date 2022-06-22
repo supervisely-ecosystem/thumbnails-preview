@@ -5,7 +5,7 @@
     "images",
     "visualization",
     "exploration",
-    "visualization-stats"
+    "visualization stats"
   ],
   "description": "Preview images as a grid gallery",
   "docker_image": "supervisely/base-py-sdk:6.23.1",
