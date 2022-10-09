@@ -1,8 +1,20 @@
 import os
+import sys
 import supervisely as sly
 from diskcache import Cache
 from supervisely.io.fs import mkdir
 from supervisely.app.v1.app_service import AppService
+
+app_root_directory = os.path.dirname(os.getcwd())
+sys.path.append(app_root_directory)
+sys.path.append(os.path.join(app_root_directory, "src"))
+print(f"App root directory: {app_root_directory}")
+sly.logger.info(f'PYTHONPATH={os.environ.get("PYTHONPATH", "")}')
+
+# order matters
+# from dotenv import load_dotenv
+# load_dotenv(os.path.join(app_root_directory, "secret_debug.env"))
+# load_dotenv(os.path.join(app_root_directory, "debug.env"))
 
 my_app: AppService = AppService()
 
@@ -40,6 +52,7 @@ if datasets is None:
 
 meta_json = api.project.get_meta(project_info.id)
 meta = sly.ProjectMeta.from_json(meta_json)
+meta_classes_names = [obj_class.name for obj_class in meta.obj_classes]
 
 all_images = []
 images_labeling_urls = []
