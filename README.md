@@ -58,4 +58,4 @@ The app create and visualize images gallery from dataset or project. App can be 
 
 - added list of class names per image
 
-<img src=""/>
+<img src="https://user-images.githubusercontent.com/48913536/194755760-e3820288-5218-4d05-98e7-d03bed63c173.png"/>
