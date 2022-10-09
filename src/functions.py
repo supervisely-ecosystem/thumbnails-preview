@@ -1,5 +1,6 @@
 import supervisely as sly
 import globals as g
+from supervisely.imaging.color import rgb2hex
 from supervisely.app.v1.widgets.grid_gallery import Gallery
 
 
@@ -23,6 +24,12 @@ def get_info_dict(ann):
             labelers_cnt.append(label.geometry.labeler_login)
     preview_data["labelers"] = len(labelers_cnt)
 
+    classes = ann.stat_class_count(g.meta_classes_names)
+    preview_data["classes"] = []
+    for class_name, class_cnt in classes.items():
+        if class_cnt > 0 and class_name != "total":
+            obj_class = g.meta.get_obj_class(class_name)
+            preview_data["classes"].append({"name": obj_class.name, "color": rgb2hex(obj_class.color)})
     return preview_data
 
 
