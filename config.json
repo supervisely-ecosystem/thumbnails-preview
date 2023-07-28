@@ -1,25 +1,25 @@
 {
-  "name": "Images thumbnail preview",
-  "type": "app",
-  "categories": [
-    "images",
-    "visualization",
-    "exploration",
-    "visualization stats"
-  ],
-  "description": "Preview images as a grid gallery",
-  "docker_image": "supervisely/thumbnails-preview:1.0.0",
-  "instance_version": "6.4.57",
-  "main_script": "src/main.py",
-  "gui_template": "src/gui.html",
-  "task_location": "workspace_tasks",
-  "icon": "https://i.imgur.com/fLX5COF.png",
-  "icon_background": "#FFFFFF",
-  "context_menu": {
-    "target": [
-      "images_project",
-      "images_dataset"
-    ]
-  },
-  "poster": "https://i.imgur.com/CKrHFs4.png"
+    "name": "Images thumbnail preview",
+    "type": "app",
+    "categories": [
+        "images",
+        "visualization",
+        "exploration",
+        "visualization stats"
+    ],
+    "description": "Preview images as a grid gallery",
+    "docker_image": "supervisely/visualization-stats:0.0.1",
+    "instance_version": "6.4.57",
+    "main_script": "src/main.py",
+    "gui_template": "src/gui.html",
+    "task_location": "workspace_tasks",
+    "icon": "https://i.imgur.com/fLX5COF.png",
+    "icon_background": "#FFFFFF",
+    "context_menu": {
+        "target": [
+            "images_project",
+            "images_dataset"
+        ]
+    },
+    "poster": "https://i.imgur.com/CKrHFs4.png"
 }
